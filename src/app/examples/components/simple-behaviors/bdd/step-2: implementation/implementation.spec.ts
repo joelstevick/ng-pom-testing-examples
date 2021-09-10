@@ -41,7 +41,13 @@ describe('simple behaviors component', () => {
       });
 
       it('Then: should display a counter that is initialized to zero', () => {
-        expect(true).toBeTrue();
+        const fixture = TestBed.createComponent(SimpleBehaviorsComponent);
+        fixture.componentInstance.label = nanoid();
+        fixture.detectChanges();
+        const compiled = fixture.nativeElement;
+        expect(compiled.querySelector('[data-testid=counter]').textContent).toContain(
+          fixture.componentInstance.counter
+        );
       });
 
       describe('When: the increment-button is clicked', () => {
