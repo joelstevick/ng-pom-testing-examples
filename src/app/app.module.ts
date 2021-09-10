@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { PresentationalComponent } from './examples/components/presentational/presentational.component';
+import { PresentationalWithBehaviorsComponent } from './examples/components/presentational-with-behaviors/presentational-with-behaviors.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PresentationalComponent
+    PresentationalComponent,
+    PresentationalWithBehaviorsComponent
   ],
   imports: [
     BrowserModule
