@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PresentationalComponent } from '../presentational.component';
+import { PresentationalComponent } from './presentational.component';
 import { nanoid } from 'nanoid';
 
 describe('presentational component', () => {
