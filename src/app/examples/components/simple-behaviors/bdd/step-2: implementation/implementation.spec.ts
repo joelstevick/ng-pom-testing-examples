@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SimpleBehaviorsComponent } from './simple-behaviors.component';
 import { nanoid } from 'nanoid';
 
-describe('simple behavioral component', () => {
+describe('simple behaviors component', () => {
   let component: SimpleBehaviorsComponent;
   let fixture: ComponentFixture<SimpleBehaviorsComponent>;
 
