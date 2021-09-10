@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { SimpleBehaviorsComponent } from './simple-behaviors.component';
 import { nanoid } from 'nanoid';
 
@@ -35,9 +35,9 @@ describe('simple behaviors component', () => {
         fixture.componentInstance.label = nanoid();
         fixture.detectChanges();
         const compiled = fixture.nativeElement;
-        expect(compiled.querySelector('[data-testid=increment-btn]').textContent).toContain(
-          fixture.componentInstance.label
-        );
+        expect(
+          compiled.querySelector('[data-testid=increment-btn]').textContent
+        ).toContain(fixture.componentInstance.label);
       });
 
       it('Then: should display a counter that is initialized to zero', () => {
@@ -45,15 +45,29 @@ describe('simple behaviors component', () => {
         fixture.componentInstance.label = nanoid();
         fixture.detectChanges();
         const compiled = fixture.nativeElement;
-        expect(compiled.querySelector('[data-testid=counter]').textContent).toContain(
-          fixture.componentInstance.counter
-        );
+        expect(
+          compiled.querySelector('[data-testid=counter]').textContent
+        ).toContain(fixture.componentInstance.counter);
       });
 
       describe('When: the increment-button is clicked', () => {
-        it('Then: the counter should be incremented', () => {
-          expect(true).toBeTrue();
-        });
+        it('Then: the counter should be incremented', fakeAsync(() => {
+          const fixture = TestBed.createComponent(SimpleBehaviorsComponent);
+          fixture.componentInstance.label = nanoid();
+          fixture.detectChanges();
+          const compiled = fixture.nativeElement;
+
+          const incrementBtn = compiled.querySelector('[data-testid=increment-btn]');
+          const counter = compiled.querySelector('[data-testid=counter]');
+          const counterBefore = fixture.componentInstance.counter;
+
+          incrementBtn.click();
+          tick();
+          fixture.detectChanges();
+
+          expect(counter.textContent).toContain(counterBefore + 1);
+
+        }));
       });
     });
   });
