@@ -22,8 +22,12 @@ describe('simple behaviors component', () => {
     describe('When: rendered', () => {
       it('Then: should display the title', () => {
         const fixture = TestBed.createComponent(SimpleBehaviorsComponent);
+        fixture.componentInstance.title = nanoid();
         fixture.detectChanges();
         const compiled = fixture.nativeElement;
+        expect(compiled.querySelector('h1').textContent).toContain(
+          fixture.componentInstance.title
+        );
       });
     });
   });
