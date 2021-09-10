@@ -14,10 +14,10 @@ describe('simple behaviors component', () => {
       });
 
       describe('When: the increment-button is clicked', () => {
-          it ('Then: the counter should be incremented', () => {
-              expect(true).toBeTrue();
-          })
-      })
+        it('Then: the counter should be incremented', () => {
+          expect(true).toBeTrue();
+        });
+      });
     });
   });
 });
