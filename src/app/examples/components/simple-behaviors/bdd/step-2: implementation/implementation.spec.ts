@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PresentationalWithBehaviorsComponent } from './presentational-with-behaviors.component';
+import { SimpleBehaviorsComponent } from './simple-behaviors.component';
 import { nanoid } from 'nanoid';
 
-describe('presentational component', () => {
-  let component: PresentationalWithBehaviorsComponent;
-  let fixture: ComponentFixture<PresentationalWithBehaviorsComponent>;
+describe('simple behavioral component', () => {
+  let component: SimpleBehaviorsComponent;
+  let fixture: ComponentFixture<SimpleBehaviorsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PresentationalWithBehaviorsComponent],
+      declarations: [SimpleBehaviorsComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PresentationalWithBehaviorsComponent);
+    fixture = TestBed.createComponent(SimpleBehaviorsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,7 +21,7 @@ describe('presentational component', () => {
   describe('Given: initialization completed', () => {
     describe('When: rendered', () => {
       it('Then: should display the title', () => {
-        const fixture = TestBed.createComponent(PresentationalWithBehaviorsComponent);
+        const fixture = TestBed.createComponent(SimpleBehaviorsComponent);
         fixture.detectChanges();
         const compiled = fixture.nativeElement;
       });
