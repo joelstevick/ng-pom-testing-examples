@@ -30,8 +30,14 @@ describe('simple behaviors component', () => {
         );
       });
 
-      it('Then: should display a button with the label="increment"', () => {
-        expect(true).toBeTrue();
+      it('Then: should display a button where the label is bound to the "label" component property', () => {
+        const fixture = TestBed.createComponent(SimpleBehaviorsComponent);
+        fixture.componentInstance.label = nanoid();
+        fixture.detectChanges();
+        const compiled = fixture.nativeElement;
+        expect(compiled.querySelector('[data-testid=increment-btn]').textContent).toContain(
+          fixture.componentInstance.label
+        );
       });
 
       it('Then: should display a counter that is initialized to zero', () => {

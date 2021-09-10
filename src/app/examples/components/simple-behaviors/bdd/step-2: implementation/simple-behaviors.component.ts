@@ -10,9 +10,15 @@ export class SimpleBehaviorsComponent implements OnInit {
   @Input()
   title: string;
   
+  counter = 0;
+  label = 'Increment the counter';
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  incrementClicked() {
+    this.counter ++;
+  }
 }
