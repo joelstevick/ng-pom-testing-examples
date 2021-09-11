@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { nanoid } from 'nanoid';
 import { CounterComponent } from '../../counter.component';
 
-describe('presentational component', () => {
+describe('Counter component', () => {
   let component: CounterComponent;
   let fixture: ComponentFixture<CounterComponent>;
 

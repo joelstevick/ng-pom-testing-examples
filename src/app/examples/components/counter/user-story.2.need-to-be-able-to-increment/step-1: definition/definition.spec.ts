@@ -1,9 +1,6 @@
-describe('simple behaviors component', () => {
+describe('Counter component', () => {
   describe('Given: initialization completed', () => {
     describe('When: rendered', () => {
-      it('Then: should display the title', () => {
-        expect(true).toBeTrue();
-      });
 
       it('Then: should display a button with the label="increment"', () => {
         expect(true).toBeTrue();

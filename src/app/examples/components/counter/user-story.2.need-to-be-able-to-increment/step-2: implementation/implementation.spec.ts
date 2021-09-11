@@ -9,7 +9,7 @@ import { POM } from 'ng-pom-testing';
 import { CounterComponent } from '../../counter.component';
 import { counterPomConfig } from './counter.angular-testbed.pom';
 
-describe('simple behaviors component', () => {
+describe('Counter component', () => {
   let component: CounterComponent;
   let fixture: ComponentFixture<CounterComponent>;
   let compiled: any;
@@ -32,16 +32,6 @@ describe('simple behaviors component', () => {
 
   describe('Given: initialization completed', () => {
     describe('When: rendered', () => {
-      it('Then: should display the title', () => {
-        // arrange
-        const title = nanoid();
-
-        // act
-        pom.action('set-title', title);
-
-        // assert
-        expect(compiled.querySelector('h1').textContent).toContain(title);
-      });
 
       it('Then: should display a button where the label is bound to the "label" component property', () => {
        // arrange
