@@ -10,7 +10,7 @@ import { CounterComponent } from '../../counter.component';
 import { counterPomConfig } from '../../counter.angular-testbed.pom';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
-xdescribe('Counter component', () => {
+describe('Counter component', () => {
   let component: CounterComponent;
   let fixture: ComponentFixture<CounterComponent>;
   let compiled: any;
@@ -33,7 +33,7 @@ xdescribe('Counter component', () => {
     fixture.detectChanges();
   }));
 
-  xdescribe('Given: initialization completed', () => {
+  describe('Given: initialization completed', () => {
     describe('When: rendered', () => {
       it('Then: should not display the progress control', () => {
         // arrange -- should default to not displayed
