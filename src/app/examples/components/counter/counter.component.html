@@ -1,4 +1,4 @@
 <h1>{{title}}</h1>
 <button id="increment-btn" data-testid="increment-btn" (click)="incrementClicked()">{{label}}</button>
 <div data-testid="counter">{{counter}}</div>
-<mat-progress-bar *ngIf="counter > 0" data-testid="progress-control"></mat-progress-bar>
+<mat-progress-bar *ngIf="counter > 0" data-testid="progress-control" [value]="counter"></mat-progress-bar>

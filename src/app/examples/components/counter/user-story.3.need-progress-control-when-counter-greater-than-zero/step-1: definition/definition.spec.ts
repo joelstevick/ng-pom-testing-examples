@@ -11,9 +11,6 @@ describe('Counter component', () => {
         it('Then: the progress control should be displayed', () => {
           expect(true).toBeTrue();
         });
-        it('Then: the progress control value should match the counter', () => {
-          expect(true).toBeTrue();
-        });
       });
     });
   });

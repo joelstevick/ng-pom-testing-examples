@@ -53,14 +53,14 @@ describe('Counter component', () => {
 
         // assert
         expect(
-          compiled.querySelector('[data-testid=counter]').textContent
+          pom.action('get-counter').textContent
         ).toContain(fixture.componentInstance.counter);
       });
 
       describe('When: the increment-button is clicked', () => {
         it('Then: the counter should be incremented', fakeAsync(() => {
           // arrange 
-          const counter = compiled.querySelector('[data-testid=counter]');
+          const counter = pom.action('get-counter');
           const counterBefore = fixture.componentInstance.counter;
 
           // act

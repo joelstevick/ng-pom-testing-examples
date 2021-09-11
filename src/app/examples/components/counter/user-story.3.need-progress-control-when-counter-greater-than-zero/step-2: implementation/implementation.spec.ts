@@ -57,10 +57,6 @@ describe('Counter component', () => {
           // assert
           expect(pom.action('get-progress-control')).toBeTruthy();
         }));
-        it('Then: the progress control value should match the counter', fakeAsync(() => {
-          // assert
-          expect(pom.action('get-progress-control')).toBeTruthy();
-        }));
       });
     });
   });
