@@ -25,7 +25,7 @@ describe('simple behaviors component', () => {
     fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
     compiled = fixture.nativeElement;
-    pom = new POM({ fixture, component }, counterPomConfig);
+    pom = new POM({ fixture, component, compiled }, counterPomConfig);
 
     fixture.detectChanges();
   });
@@ -68,21 +68,14 @@ describe('simple behaviors component', () => {
 
       describe('When: the increment-button is clicked', () => {
         it('Then: the counter should be incremented', fakeAsync(() => {
-          const fixture = TestBed.createComponent(CounterComponent);
-          fixture.componentInstance.label = nanoid();
-          fixture.detectChanges();
-          const compiled = fixture.nativeElement;
-
-          const incrementBtn = compiled.querySelector(
-            '[data-testid=increment-btn]'
-          );
+          // arrange 
           const counter = compiled.querySelector('[data-testid=counter]');
           const counterBefore = fixture.componentInstance.counter;
 
-          incrementBtn.click();
-          tick();
-          fixture.detectChanges();
+          // act
+          pom.action('click-increment-btn');
 
+          // assert
           expect(counter.textContent).toContain(counterBefore + 1);
         }));
       });
