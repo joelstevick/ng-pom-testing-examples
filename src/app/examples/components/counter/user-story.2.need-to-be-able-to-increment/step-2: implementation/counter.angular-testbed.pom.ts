@@ -5,7 +5,7 @@ import { CounterComponent } from '../../counter.component';
 interface Context {
   fixture: ComponentFixture<CounterComponent>;
   component: CounterComponent;
-  compiled: any
+  compiled: any;
 }
 
 export const counterPomConfig: PomConfig = {
@@ -24,14 +24,14 @@ export const counterPomConfig: PomConfig = {
       },
     },
     'click-increment-btn': {
-      action: ({ fixture, compiled }, label: string) => {
+      action: ({ fixture, compiled }) => {
         const incrementBtn = compiled.querySelector(
-            '[data-testid=increment-btn]'
-          );
-          
-          incrementBtn.click();
-          tick();
-          fixture.detectChanges();
+          '[data-testid=increment-btn]'
+        );
+
+        incrementBtn.click();
+        tick();
+        fixture.detectChanges();
       },
     },
   },
