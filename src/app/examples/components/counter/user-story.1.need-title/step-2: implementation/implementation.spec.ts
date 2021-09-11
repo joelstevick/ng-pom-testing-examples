@@ -30,10 +30,13 @@ describe('Counter component', () => {
   describe('Given: initialization completed', () => {
     describe('When: rendered', () => {
       it('Then: should display the title', () => {
+        // arrange
         const title = nanoid();
 
+        // act
         pom.action('set-title', title);
 
+        // assert
         expect(pom.action('get-title').textContent).toContain(title);
       });
     });
