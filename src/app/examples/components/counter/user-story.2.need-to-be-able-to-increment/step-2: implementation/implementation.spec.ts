@@ -2,12 +2,12 @@ import {
   ComponentFixture,
   fakeAsync,
   TestBed,
-  tick,
 } from '@angular/core/testing';
 import { nanoid } from 'nanoid';
 import { POM } from 'ng-pom-testing';
 import { CounterComponent } from '../../counter.component';
 import { counterPomConfig } from '../../counter.angular-testbed.pom';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 describe('Counter component', () => {
   let component: CounterComponent;
@@ -18,6 +18,7 @@ describe('Counter component', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [CounterComponent],
+      imports: [MatProgressBarModule],
     }).compileComponents();
   });
 
@@ -41,7 +42,7 @@ describe('Counter component', () => {
        pom.action('set-label', label);
 
        // assert
-       expect(compiled.querySelector('[data-testid=increment-btn]').textContent).toContain(label);
+       expect(pom.action('get-increment-btn').textContent).toContain(label);
       });
 
       it('Then: should display a counter that is initialized to zero', () => {
