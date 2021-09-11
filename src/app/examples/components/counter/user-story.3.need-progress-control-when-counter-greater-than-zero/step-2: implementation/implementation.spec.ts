@@ -1,12 +1,9 @@
-import {
-  ComponentFixture,
-  fakeAsync,
-  TestBed,
-} from '@angular/core/testing';
-import { POM } from 'ng-pom-testing';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import { mergeConfig, POM } from 'ng-pom-testing';
 import { CounterComponent } from '../../counter.component';
 import { counterPomConfig } from '../../counter.angular-testbed.pom';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { commonTestbedConfig } from 'src/app/testing/common/testbed.config';
 
 describe('Counter component', () => {
   let component: CounterComponent;
@@ -15,10 +12,15 @@ describe('Counter component', () => {
   let pom: POM;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [CounterComponent],
-      imports: [MatProgressBarModule],
-    }).compileComponents();
+    await TestBed.configureTestingModule(
+      /**
+       * commonTestbedConfig contains all of the declarations, providers and imports that will be commonly required.
+       * for example MatProgressBarModule
+       */
+      mergeConfig(commonTestbedConfig, {
+        declarations: [CounterComponent],
+      })
+    ).compileComponents();
   });
 
   beforeEach(fakeAsync(() => {
