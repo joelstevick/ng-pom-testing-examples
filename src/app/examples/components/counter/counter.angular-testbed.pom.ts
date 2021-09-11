@@ -49,5 +49,10 @@ export const counterPomConfig: PomConfig = {
         return compiled.querySelector('[data-testid=counter]');
       },
     },
+    'get-title': {
+      action: ({ compiled }) => {
+        return compiled.querySelector('[data-testid=title]');
+      },
+    },
 },
 };
