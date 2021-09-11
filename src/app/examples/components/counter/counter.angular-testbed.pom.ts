@@ -34,5 +34,15 @@ export const counterPomConfig: PomConfig = {
         fixture.detectChanges();
       },
     },
-  },
+    'get-progress-control': {
+      action: ({ compiled }) => {
+        return compiled.querySelector('[data-testid=progress-control]');
+      },
+    },
+    'get-counter': {
+      action: ({ compiled }) => {
+        return compiled.querySelector('[data-testid=counter]');
+      },
+    },
+},
 };
