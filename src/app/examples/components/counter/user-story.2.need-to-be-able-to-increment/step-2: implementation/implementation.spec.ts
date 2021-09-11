@@ -55,10 +55,12 @@ describe('simple behaviors component', () => {
       });
 
       it('Then: should display a counter that is initialized to zero', () => {
-        const fixture = TestBed.createComponent(CounterComponent);
-        fixture.componentInstance.label = nanoid();
-        fixture.detectChanges();
-        const compiled = fixture.nativeElement;
+      
+        // arrange -- defaults to 0
+
+        // act -- testing initial state
+
+        // assert
         expect(
           compiled.querySelector('[data-testid=counter]').textContent
         ).toContain(fixture.componentInstance.counter);
