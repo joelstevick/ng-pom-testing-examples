@@ -7,7 +7,7 @@ import {
 import { nanoid } from 'nanoid';
 import { POM } from 'ng-pom-testing';
 import { CounterComponent } from '../../counter.component';
-import { counterPomConfig } from './counter.angular-testbed.pom';
+import { counterPomConfig } from '../../counter.angular-testbed.pom';
 
 describe('Counter component', () => {
   let component: CounterComponent;

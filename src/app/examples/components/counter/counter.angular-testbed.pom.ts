@@ -1,6 +1,6 @@
 import { ComponentFixture, tick } from '@angular/core/testing';
 import { PomConfig } from 'ng-pom-testing';
-import { CounterComponent } from '../../counter.component';
+import { CounterComponent } from './counter.component';
 
 interface Context {
   fixture: ComponentFixture<CounterComponent>;
