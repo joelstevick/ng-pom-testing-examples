@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-simple-behaviors',
-  templateUrl: './simple-behaviors.component.html',
-  styleUrls: ['./simple-behaviors.component.css']
+  selector: 'app-counter',
+  templateUrl: './counter.component.html',
+  styleUrls: ['./counter.component.css']
 })
-export class SimpleBehaviorsComponent implements OnInit {
+export class CounterComponent implements OnInit {
 
   @Input()
   title: string;
