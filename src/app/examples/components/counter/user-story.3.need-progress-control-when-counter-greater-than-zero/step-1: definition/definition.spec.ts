@@ -1,16 +1,10 @@
 describe('Counter component', () => {
   describe('Given: initialization completed', () => {
     describe('When: rendered', () => {
-
-      it('Then: should not display the progress control', () => {
-        expect(true).toBeTrue();
-      });
-
+      it('Then: should not display the progress control', () => {});
 
       describe('When: the increment-button has been clicked', () => {
-        it('Then: the progress control should be displayed', () => {
-          expect(true).toBeTrue();
-        });
+        it('Then: the progress control should be displayed', () => {});
       });
     });
   });

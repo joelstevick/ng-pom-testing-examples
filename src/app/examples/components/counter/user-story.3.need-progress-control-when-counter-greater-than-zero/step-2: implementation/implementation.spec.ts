@@ -2,9 +2,7 @@ import {
   ComponentFixture,
   fakeAsync,
   TestBed,
-  tick,
 } from '@angular/core/testing';
-import { nanoid } from 'nanoid';
 import { POM } from 'ng-pom-testing';
 import { CounterComponent } from '../../counter.component';
 import { counterPomConfig } from '../../counter.angular-testbed.pom';
@@ -44,7 +42,7 @@ describe('Counter component', () => {
         expect(pom.action('get-progress-control')).toBeFalsy();
       });
 
-      describe('When: the increment-button has been clicked ', () => {
+      describe('When: the increment-button has been clicked', () => {
         let counterBefore: number;
         beforeEach(fakeAsync(() => {
           // arrange
