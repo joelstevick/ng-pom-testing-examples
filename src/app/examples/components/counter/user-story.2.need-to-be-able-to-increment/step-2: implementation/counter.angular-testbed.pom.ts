@@ -15,5 +15,12 @@ export const counterPomConfig: PomConfig = {
         fixture.detectChanges();
       },
     },
+
+    'set-label': {
+        action: ({ fixture, component }, label: string) => {
+          component.label = label;
+          fixture.detectChanges();
+        },
+      },
   },
 };

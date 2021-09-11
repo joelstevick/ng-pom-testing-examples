@@ -33,21 +33,25 @@ describe('simple behaviors component', () => {
   describe('Given: initialization completed', () => {
     describe('When: rendered', () => {
       it('Then: should display the title', () => {
+        // arrange
         const title = nanoid();
 
+        // act
         pom.action('set-title', title);
 
+        // assert
         expect(compiled.querySelector('h1').textContent).toContain(title);
       });
 
       it('Then: should display a button where the label is bound to the "label" component property', () => {
-        const fixture = TestBed.createComponent(CounterComponent);
-        fixture.componentInstance.label = nanoid();
-        fixture.detectChanges();
-        const compiled = fixture.nativeElement;
-        expect(
-          compiled.querySelector('[data-testid=increment-btn]').textContent
-        ).toContain(fixture.componentInstance.label);
+       // arrange
+       const label = nanoid();
+
+       // act
+       pom.action('set-label', label);
+
+       // assert
+       expect(compiled.querySelector('[data-testid=increment-btn]').textContent).toContain(label);
       });
 
       it('Then: should display a counter that is initialized to zero', () => {
