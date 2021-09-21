@@ -1,7 +1,7 @@
 import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { mergeConfig, POM } from 'ng-pom-testing';
-import { CounterComponent } from '../../counter.component';
-import { counterPomConfig } from '../../counter.angular-testbed.pom';
+import { CounterComponent } from '../counter.component';
+import { counterPomConfig } from '../counter.angular-testbed.pom';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { commonTestbedConfig } from 'src/app/testing/common/testbed.config';
 

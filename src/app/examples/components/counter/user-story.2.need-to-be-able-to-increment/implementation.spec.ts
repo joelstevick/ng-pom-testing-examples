@@ -5,8 +5,8 @@ import {
 } from '@angular/core/testing';
 import { nanoid } from 'nanoid';
 import { POM } from 'ng-pom-testing';
-import { CounterComponent } from '../../counter.component';
-import { counterPomConfig } from '../../counter.angular-testbed.pom';
+import { CounterComponent } from '../counter.component';
+import { counterPomConfig } from '../counter.angular-testbed.pom';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 describe('Counter component', () => {

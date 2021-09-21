@@ -2,8 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { nanoid } from 'nanoid';
 import { POM } from 'ng-pom-testing';
-import { counterPomConfig } from '../../counter.angular-testbed.pom';
-import { CounterComponent } from '../../counter.component';
+import { counterPomConfig } from '../counter.angular-testbed.pom';
+import { CounterComponent } from '../counter.component';
 
 describe('Counter component', () => {
   let component: CounterComponent;
