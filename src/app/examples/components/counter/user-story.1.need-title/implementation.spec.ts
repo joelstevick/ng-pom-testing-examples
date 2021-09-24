@@ -12,12 +12,11 @@ describe('Counter component', () => {
   let pom: POM;
 
   beforeEach(async () => {
+    
     await TestBed.configureTestingModule({
       declarations: [CounterComponent],
     }).compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
     compiled = fixture.nativeElement;
