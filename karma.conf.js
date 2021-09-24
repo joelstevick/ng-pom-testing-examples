@@ -1,44 +1,73 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
+var path = require('path');
+
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    frameworks: ['jasmine-given', 'jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
+      require('karma-jasmine-given'),
       require('karma-chrome-launcher'),
+      require('karma-junit-reporter'),
+      require('karma-spec-reporter'),
       require('karma-jasmine-html-reporter'),
-      require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('karma-coverage-istanbul-reporter'),
+      require('@angular-devkit/build-angular/plugins/karma'),
     ],
+
     client: {
+      captureConsole: true,
+      clearContext: false,
       jasmine: {
-        // you can add configuration options for Jasmine here
-        // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
-        // for example, you can disable the random execution with `random: false`
-        // or set a specific seed with `seed: 4321`
+        random: false,
       },
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
-    jasmineHtmlReporter: {
-      suppressAll: true // removes the duplicated traces
+
+    coverageIstanbulReporter: {
+      dir: path.join(__dirname, 'coverage'),
+      reports: ['html', 'text-summary', 'cobertura', 'lcovonly'],
+      fixWebpackSourcePaths: true,
+      thresholds: {
+        statements: 79,
+        lines: 50,
+        branches: 30,
+        functions: 50,
+      },
     },
-    coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/ng-pom-testing-examples'),
-      subdir: '.',
-      reporters: [
-        { type: 'html' },
-        { type: 'text-summary' }
-      ]
+
+    junitReporter: {
+      outputDir: path.join(__dirname, 'coverage/junit'),
+      outputFile: 'junit.xml',
+      suite: 'client',
+      useBrowserName: false,
     },
-    reporters: ['progress', 'kjhtml'],
-    port: 9876,
+
+    specReporter: {
+      suppressSkipped: true,
+      showSpecTiming: true,
+    },
+
+    reporters: ['junit', 'spec'],
+    port: 9875,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
-    restartOnFileChange: true
+    singleRun: true,
+    restartOnFileChange: true,
+    browsers: ['ChromeHeadlessNoSandbox'],
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox', '--auto-watch', '--remote-debugging-address=0.0.0.0', '--remote-debugging-port=9333'],
+        debug: true,
+      },
+    },
+    captureTimeout: 210000,
+    browserDisconnectTolerance: 3,
+    browserDisconnectTimeout: 210000,
+    browserNoActivityTimeout: 210000,
   });
 };
