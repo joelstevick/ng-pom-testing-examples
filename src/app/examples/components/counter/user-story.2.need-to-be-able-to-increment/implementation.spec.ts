@@ -16,13 +16,12 @@ describe('Counter component', () => {
   let pom: POM;
 
   beforeEach(async () => {
+    // basic Angular Testbed setup
     await TestBed.configureTestingModule({
       declarations: [CounterComponent],
       imports: [MatProgressBarModule],
     }).compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
     compiled = fixture.nativeElement;
@@ -30,6 +29,7 @@ describe('Counter component', () => {
 
     fixture.detectChanges();
   });
+
 
   describe('Given: initialization completed', () => {
     describe('When: rendered', () => {

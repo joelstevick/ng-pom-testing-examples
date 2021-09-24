@@ -12,18 +12,17 @@ describe('Counter component', () => {
   let pom: POM;
 
   beforeEach(async () => {
+    // basic Angular Testbed setup
     await TestBed.configureTestingModule(
-      /**
-       * commonTestbedConfig contains all of the declarations, providers and imports that will be commonly required.
-       * for example MatProgressBarModule
-       */
+      //
+      // commonTestbedConfig contains all of the declarations, providers and imports that will be commonly required.
+      // for example MatProgressBarModule
+      //
       mergeConfig(commonTestbedConfig, {
         declarations: [CounterComponent],
       })
     ).compileComponents();
-  });
 
-  beforeEach(fakeAsync(() => {
     fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
     compiled = fixture.nativeElement;
@@ -31,7 +30,7 @@ describe('Counter component', () => {
     pom = new POM({ fixture, component, compiled }, counterPomConfig);
 
     fixture.detectChanges();
-  }));
+  });
 
   describe('Given: initialization completed', () => {
     describe('When: rendered', () => {

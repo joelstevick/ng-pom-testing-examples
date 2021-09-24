@@ -13,6 +13,7 @@ describe('Counter component', () => {
 
   beforeEach(async () => {
     
+    // basic Angular Testbed setup
     await TestBed.configureTestingModule({
       declarations: [CounterComponent],
     }).compileComponents();
@@ -21,6 +22,7 @@ describe('Counter component', () => {
     component = fixture.componentInstance;
     compiled = fixture.nativeElement;
 
+    // allocate a pom instance that is specific to this component
     pom = new POM({ fixture, component, compiled }, counterPomConfig);
 
     fixture.detectChanges();
