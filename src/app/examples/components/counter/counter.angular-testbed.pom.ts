@@ -30,7 +30,6 @@ export const counterPomConfig: PomConfig = {
         );
 
         incrementBtn.click();
-        tick();
         fixture.detectChanges();
       },
     },

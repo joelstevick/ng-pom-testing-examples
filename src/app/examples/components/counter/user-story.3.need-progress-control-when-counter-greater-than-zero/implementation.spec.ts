@@ -45,17 +45,17 @@ describe('Counter component', () => {
 
       describe('When: the increment-button has been clicked', () => {
         let counterBefore: number;
-        beforeEach(fakeAsync(() => {
+        beforeEach(() => {
           // arrange
           counterBefore = fixture.componentInstance.counter;
 
           // act
           pom.action('click-increment-btn');
-        }));
-        it('Then: the progress control should be displayed', fakeAsync(() => {
+        });
+        it('Then: the progress control should be displayed', () => {
           // assert
           expect(pom.action('get-progress-control')).toBeTruthy();
-        }));
+        });
       });
     });
   });
