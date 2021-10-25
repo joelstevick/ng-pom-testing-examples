@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
-  template: ` <h1 data-testid="title">{{ title }}</h1>
+  template: `
+    <h1 data-testid="title">{{ title }}</h1>
 
     <button
       id="increment-btn"
@@ -14,11 +15,14 @@ import { Component, Input, OnInit } from '@angular/core';
 
     <div data-testid="counter">{{ counter }}</div>
 
-    <mat-progress-bar
-      *ngIf="counter > 0"
-      data-testid="progress-control"
-      [value]="counter"
-    ></mat-progress-bar>`,
+    <div class="mat-progress-bar-container">
+      <mat-progress-bar
+        *ngIf="counter > 0"
+        data-testid="progress-control"
+        [value]="counter"
+      ></mat-progress-bar>
+    </div>
+  `,
   styleUrls: ['./counter.component.css'],
 })
 export class CounterComponent implements OnInit {

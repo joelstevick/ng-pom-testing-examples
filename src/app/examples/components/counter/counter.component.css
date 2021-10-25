@@ -1,0 +1,8 @@
+.mat-progress-bar-container {
+    padding-left: 33vw;
+    padding-top: 10vh;
+}
+
+mat-progress-bar {
+    width: 33vw;
+}
