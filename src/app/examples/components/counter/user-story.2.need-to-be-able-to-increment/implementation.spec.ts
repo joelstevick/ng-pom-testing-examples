@@ -12,7 +12,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 describe('Counter component', () => {
   let component: CounterComponent;
   let fixture: ComponentFixture<CounterComponent>;
-  let compiled: any;
+  let nativeElement: HTMLElement;
   let pom: POM;
 
   beforeEach(async () => {
@@ -24,8 +24,8 @@ describe('Counter component', () => {
 
     fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
-    compiled = fixture.nativeElement;
-    pom = new POM({ fixture, component, compiled }, counterPomConfig);
+    nativeElement = fixture.nativeElement;
+    pom = new POM({ fixture, component, nativeElement }, counterPomConfig);
 
     fixture.detectChanges();
   });

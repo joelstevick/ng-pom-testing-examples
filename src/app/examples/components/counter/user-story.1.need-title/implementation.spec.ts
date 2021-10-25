@@ -8,7 +8,7 @@ import { CounterComponent } from '../counter.component';
 describe('Counter component', () => {
   let component: CounterComponent;
   let fixture: ComponentFixture<CounterComponent>;
-  let compiled: any;
+  let nativeElement: HTMLElement;
   let pom: POM;
 
   beforeEach(async () => {
@@ -20,10 +20,10 @@ describe('Counter component', () => {
 
     fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
-    compiled = fixture.nativeElement;
+    nativeElement = fixture.nativeElement;
 
     // allocate a pom instance that is specific to this component
-    pom = new POM({ fixture, component, compiled }, counterPomConfig);
+    pom = new POM({ fixture, component, nativeElement }, counterPomConfig);
 
     fixture.detectChanges();
   });

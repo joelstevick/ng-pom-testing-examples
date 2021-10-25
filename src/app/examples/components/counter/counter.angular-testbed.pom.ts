@@ -5,7 +5,7 @@ import { CounterComponent } from './counter.component';
 interface Context {
   fixture: ComponentFixture<CounterComponent>;
   component: CounterComponent;
-  compiled: any;
+  nativeElement: HTMLElement;
 }
 
 export const counterPomConfig: PomConfig = {
@@ -24,8 +24,8 @@ export const counterPomConfig: PomConfig = {
       },
     },
     'click-increment-btn': {
-      action: ({ fixture, compiled }) => {
-        const incrementBtn = compiled.querySelector(
+      action: ({ fixture, nativeElement }) => {
+        const incrementBtn = nativeElement.querySelector(
           '[data-testid=increment-btn]'
         );
 
@@ -34,23 +34,23 @@ export const counterPomConfig: PomConfig = {
       },
     },
     'get-increment-btn': {
-      action: ({ compiled }) => {
-        return compiled.querySelector('[data-testid=increment-btn]');
+      action: ({ nativeElement }) => {
+        return nativeElement.querySelector('[data-testid=increment-btn]');
       },
     },
     'get-progress-control': {
-      action: ({ compiled }) => {
-        return compiled.querySelector('[data-testid=progress-control]');
+      action: ({ nativeElement }) => {
+        return nativeElement.querySelector('[data-testid=progress-control]');
       },
     },
     'get-counter': {
-      action: ({ compiled }) => {
-        return compiled.querySelector('[data-testid=counter]');
+      action: ({ nativeElement }) => {
+        return nativeElement.querySelector('[data-testid=counter]');
       },
     },
     'get-title': {
-      action: ({ compiled }) => {
-        return compiled.querySelector('[data-testid=title]');
+      action: ({ nativeElement }) => {
+        return nativeElement.querySelector('[data-testid=title]');
       },
     },
 },

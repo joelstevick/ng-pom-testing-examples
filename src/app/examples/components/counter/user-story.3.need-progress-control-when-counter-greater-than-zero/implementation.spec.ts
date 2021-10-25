@@ -2,20 +2,21 @@ import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { mergeConfig, POM } from 'ng-pom-testing';
 import { CounterComponent } from '../counter.component';
 import { counterPomConfig } from '../counter.angular-testbed.pom';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { commonTestbedConfig } from 'src/app/testing/common/testbed.config';
 
 describe('Counter component', () => {
   let component: CounterComponent;
   let fixture: ComponentFixture<CounterComponent>;
-  let compiled: any;
+  let nativeElement: HTMLElement;
   let pom: POM;
 
   beforeEach(async () => {
     // basic Angular Testbed setup
     await TestBed.configureTestingModule(
       //
-      // commonTestbedConfig contains all of the declarations, providers and imports that will be commonly required.
+      // commonTestbedConfig contains all of the declarations, providers and imports 
+      // that will be commonly required.
+      //
       // for example MatProgressBarModule
       //
       mergeConfig(commonTestbedConfig, {
@@ -25,9 +26,9 @@ describe('Counter component', () => {
 
     fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
-    compiled = fixture.nativeElement;
+    nativeElement = fixture.nativeElement;
 
-    pom = new POM({ fixture, component, compiled }, counterPomConfig);
+    pom = new POM({ fixture, component, nativeElement }, counterPomConfig);
 
     fixture.detectChanges();
   });
