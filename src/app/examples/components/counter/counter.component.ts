@@ -2,23 +2,37 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
-  templateUrl: './counter.component.html',
-  styleUrls: ['./counter.component.css']
+  template: ` <h1 data-testid="title">{{ title }}</h1>
+
+    <button
+      id="increment-btn"
+      data-testid="increment-btn"
+      (click)="incrementClicked()"
+    >
+      {{ label }}
+    </button>
+
+    <div data-testid="counter">{{ counter }}</div>
+
+    <mat-progress-bar
+      *ngIf="counter > 0"
+      data-testid="progress-control"
+      [value]="counter"
+    ></mat-progress-bar>`,
+  styleUrls: ['./counter.component.css'],
 })
 export class CounterComponent implements OnInit {
-
   @Input()
   title: string;
-  
+
   counter = 0;
   label = 'Increment the counter';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   incrementClicked() {
-    this.counter ++;
+    this.counter++;
   }
 }
