@@ -57,6 +57,10 @@ describe('Counter component', () => {
           // assert
           expect(pom.action('get-progress-control')).toBeTruthy();
         });
+        it('Then: counter should have been incremented', () => {
+          // assert
+          expect(fixture.componentInstance.counter).toEqual(counterBefore + 1);
+        });
       });
     });
   });

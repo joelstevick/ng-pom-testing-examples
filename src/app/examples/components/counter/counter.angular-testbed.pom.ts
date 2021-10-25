@@ -1,4 +1,4 @@
-import { ComponentFixture, tick } from '@angular/core/testing';
+import { ComponentFixture } from '@angular/core/testing';
 import { PomConfig } from 'ng-pom-testing';
 import { CounterComponent } from './counter.component';
 
@@ -53,5 +53,5 @@ export const counterPomConfig: PomConfig = {
         return nativeElement.querySelector('[data-testid=title]');
       },
     },
-},
+  },
 };
