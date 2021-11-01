@@ -12,10 +12,13 @@ export class ChildComponent implements OnInit {
 
   @Output()
   clicked = new EventEmitter();
-  
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onClick() {
+    this.clicked.emit()
+  }
 }
