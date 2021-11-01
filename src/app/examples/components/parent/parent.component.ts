@@ -14,4 +14,7 @@ export class ParentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick() {
+    this.someData = 'clicked!';
+  }
 }
