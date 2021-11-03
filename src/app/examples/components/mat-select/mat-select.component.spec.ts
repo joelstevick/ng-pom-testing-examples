@@ -11,7 +11,7 @@ import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import {MatSelectHarness} from '@angular/material/select/testing';
 
-fdescribe('MatSelectComponent.', () => {
+fdescribe('MatSelectComponent', () => {
   let component: MatSelectComponent;
   let fixture: ComponentFixture<MatSelectComponent>;
 
@@ -55,6 +55,6 @@ fdescribe('MatSelectComponent.', () => {
   it('should create', fakeAsync(() => {
     expect(component).toBeTruthy();
 
-    console.log(fixture.debugElement.nativeElement.querySelectorAll('mat-select'))
+    console.log(fixture.debugElement.nativeElement.querySelectorAll('mat-select')[0].querySelectorAll('span'))
   }));
 });
