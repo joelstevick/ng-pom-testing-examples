@@ -1,5 +1,5 @@
-import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
-import { MatSlideToggle, MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ComponentFixture, fakeAsync } from '@angular/core/testing';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSlideToggleComponent } from './mat-slide-toggle.component';
 import { render } from '@testing-library/angular';
 
