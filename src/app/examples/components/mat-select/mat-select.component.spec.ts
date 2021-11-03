@@ -26,7 +26,26 @@ fdescribe('MatSelectComponent.', () => {
 
     const rootLoader: HarnessLoader = TestbedHarnessEnvironment.documentRootLoader(fixture);
     const matSelectHarnesses = await rootLoader.getAllHarnesses(MatSelectHarness);
-    console.log(await (await matSelectHarnesses[0].host()))
+
+    let fooHarness;
+
+    for (let h of matSelectHarnesses) {
+
+      const host = await (await h.host());
+
+      if (await host.getAttribute('data-testid') === 'foo') {
+        fooHarness = h;
+      }
+
+    }
+
+    await fooHarness.open();
+
+    const options = await fooHarness.getOptions();
+
+    await options[1].click();
+    fixture.detectChanges();
+
     // await matSelectHarness.open();
     // const options = await matSelectHarness.getOptions();
     // console.log(await options[1].getText());
@@ -34,6 +53,8 @@ fdescribe('MatSelectComponent.', () => {
   }));
 
   it('should create', fakeAsync(() => {
-    expect(component).toBeTruthy()
+    expect(component).toBeTruthy();
+
+    console.log(fixture.debugElement.nativeElement.querySelectorAll('mat-select'))
   }));
 });
