@@ -8,10 +8,23 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ParentComponent } from './examples/components/parent/parent.component';
 import { ChildComponent } from './examples/components/parent/child/child.component';
 import { GrandChildComponent } from './examples/components/parent/child/grand-child/grand-child.component';
-
+import { MatSlideToggleComponent } from './examples/components/mat-slide-toggle/mat-slide-toggle.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 @NgModule({
-  declarations: [AppComponent, CounterComponent, ParentComponent, ChildComponent, GrandChildComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, MatProgressBarModule],
+  declarations: [
+    AppComponent,
+    CounterComponent,
+    ParentComponent,
+    ChildComponent,
+    GrandChildComponent,
+    MatSlideToggleComponent,
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule,
+    MatSlideToggleModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
