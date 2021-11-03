@@ -1,6 +1,5 @@
 import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { MatSlideToggle, MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { By } from '@angular/platform-browser';
 import { MatSlideToggleComponent } from './mat-slide-toggle.component';
 import { render } from '@testing-library/angular';
 
@@ -28,7 +27,6 @@ fdescribe('MatSlideToggleComponent.', () => {
     fixture.detectChanges();
 
     expect(fixture.debugElement.nativeElement.querySelectorAll('mat-slide-toggle')[0].querySelectorAll('[aria-checked=true]')[0]).toBeTruthy();
-
 
   }));
 });
