@@ -2,36 +2,32 @@ import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { MatSlideToggle, MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { By } from '@angular/platform-browser';
 import { MatSlideToggleComponent } from './mat-slide-toggle.component';
+import { render } from '@testing-library/angular';
 
 fdescribe('MatSlideToggleComponent.', () => {
   let component: MatSlideToggleComponent;
   let fixture: ComponentFixture<MatSlideToggleComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ MatSlideToggleComponent ],
-      imports: [MatSlideToggleModule]
-    })
-    .compileComponents();
-  });
+    const results = await render(MatSlideToggleComponent, { imports: [MatSlideToggleModule]} )
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(MatSlideToggleComponent);
-
+    fixture = results.fixture;
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture.detectChanges(); 
   });
 
-  it('should create', fakeAsync(() => {
+  it('should create.', fakeAsync(() => {
     expect(component).toBeTruthy();
 
     const checkbox = fixture.debugElement.nativeElement.querySelectorAll('mat-slide-toggle input')[0];
+
+    expect(fixture.debugElement.nativeElement.querySelectorAll('mat-slide-toggle')[0].querySelectorAll('[aria-checked=false]')[0]).toBeTruthy();
 
     checkbox.click();
 
     fixture.detectChanges();
 
-    console.log(fixture.debugElement.nativeElement.querySelectorAll('mat-slide-toggle')[0])
+    expect(fixture.debugElement.nativeElement.querySelectorAll('mat-slide-toggle')[0].querySelectorAll('[aria-checked=true]')[0]).toBeTruthy();
 
 
   }));
