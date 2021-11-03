@@ -3,6 +3,6 @@
     padding-top: 10%;
 }
 
-app-parent, app-mat-slide-toggle {
+app-parent, app-mat-slide-toggle, app-mat-select {
     text-align: center;
 }

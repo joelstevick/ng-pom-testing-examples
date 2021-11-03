@@ -3,7 +3,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSlideToggleComponent } from './mat-slide-toggle.component';
 import { render } from '@testing-library/angular';
 
-fdescribe('MatSlideToggleComponent.', () => {
+describe('MatSlideToggleComponent.', () => {
   let component: MatSlideToggleComponent;
   let fixture: ComponentFixture<MatSlideToggleComponent>;
 
